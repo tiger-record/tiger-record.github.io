@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Taiga Kaminaga — Performance Archive</title>
+  <title>Taiga Kaminaga Record — Performance Archive</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap');
@@ -131,10 +131,10 @@
 
     .hero-kicker {
       font-family: "Cormorant Garamond", serif;
-      color: var(--teal);
-      font-size: 17px;
-      letter-spacing: 0.25em;
-      margin-bottom: 18px;
+      color: #999;
+      font-size: 15px;
+      letter-spacing: 0.22em;
+      margin-bottom: 16px;
     }
 
     .hero h1 {
@@ -214,9 +214,67 @@
 
     .profile-text {
       font-family: "Noto Serif JP", serif;
-      font-size: 15px;
-      line-height: 2.2;
+      font-size: 17px;
+      line-height: 2.15;
       color: #555;
+    }
+
+    .profile-intro {
+      max-width: 720px;
+      margin: 0 auto 35px;
+    }
+
+    .profile-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 680px;
+      margin: 0 auto 30px;
+      background: transparent;
+      border: 1px solid #e7e5de;
+    }
+
+    .profile-detail {
+      background: rgba(255, 255, 255, 0.72);
+      padding: 18px 12px;
+    }
+
+    .profile-detail .label {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--teal);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      margin-bottom: 3px;
+    }
+
+    .profile-detail .value {
+      font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .profile-link {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      font-family: "Noto Serif JP", serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      transition: 0.25s;
+    }
+
+    .profile-link:hover {
+      background: var(--teal);
+      color: white;
+    }
+
+    .external-note {
+      margin-top: 9px;
+      color: #999;
+      font-size: 10px;
+      letter-spacing: 0.04em;
     }
 
     /* ---------- PERFORMANCE ---------- */
@@ -387,7 +445,7 @@
       }
 
       .logo {
-        font-size: 21px;
+        font-size: 19px;
       }
 
       nav {
@@ -408,12 +466,16 @@
         padding: 80px 20px;
       }
 
+      .profile-details {
+        grid-template-columns: 1fr;
+      }
+
       .archive-box {
         grid-template-columns: 1fr;
       }
 
       .profile-text {
-        font-size: 13px;
+        font-size: 15px;
       }
     }
   </style>
@@ -425,7 +487,7 @@
   <header>
     <div class="header-inner">
       <a href="#" class="logo">
-        Taiga <span>Kaminaga</span>
+        <span>Kaminaga</span> Record
       </a>
 
       <nav>
@@ -444,18 +506,18 @@
       <div class="hero-content">
 
         <div class="hero-kicker">
-          PERFORMANCE ARCHIVE
+          Taiga Kaminaga
         </div>
 
         <h1>
-          Taiga <span>Kaminaga</span>
+          <span>Kaminaga</span> Record
         </h1>
 
         <div class="hero-line"></div>
 
         <p class="hero-description">
-          神永タイガさんの活動・演奏記録をまとめる<br>
-          FAN ARCHIVE
+          神永タイガさんの活動や演奏の記録をまとめる<br>
+          非公式ファンサイトです。
         </p>
 
       </div>
@@ -472,9 +534,41 @@
           <div class="ornament">— ♫ —</div>
         </div>
 
-        <p class="profile-text">
-          神永タイガさんの活動や演奏を記録する<br>
-          ファンによるアーカイブサイトです。
+        <p class="profile-text profile-intro">
+          世界各国で演奏会を開く有名なヴァイオリニストの一人息子。<br>
+          なんでも与えられてきた人生イージーモード。
+        </p>
+
+        <div class="profile-details">
+
+          <div class="profile-detail">
+            <span class="label">BIRTHDAY</span>
+            <span class="value">11.22</span>
+          </div>
+
+          <div class="profile-detail">
+            <span class="label">DEBUT</span>
+            <span class="value">2026.08.27</span>
+          </div>
+
+          <div class="profile-detail">
+            <span class="label">FIRST STREAM</span>
+            <span class="value">2026.08.28</span>
+          </div>
+
+        </div>
+
+        <a
+          class="profile-link"
+          href="https://wikiwiki.jp/nijisanji/%E7%A5%9E%E6%B0%B8%E3%82%BF%E3%82%A4%E3%82%AC"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          さらに詳しく知りたい方はこちら →
+        </a>
+
+        <p class="external-note">
+          ※ 外部サイト（非公式Wiki）へ移動します
         </p>
 
       </div>
@@ -550,11 +644,11 @@
   <footer>
 
     <div class="footer-title">
-      Taiga Kaminaga
+      Kaminaga Record
     </div>
 
     <div class="footer-note">
-      FAN ARCHIVE / PERFORMANCE COLLECTION
+      UNOFFICIAL FAN SITE / RECORD & ARCHIVE
     </div>
 
   </footer>
@@ -568,6 +662,16 @@
      * 今はまだ空っぽです。
      * あとで神永タイガさんの演奏データを
      * ここに追加していきます。
+     *
+     * 例：
+     * {
+     *   title: "曲名",
+     *   instrument: "VIOLIN",
+     *   date: "2026.08.28",
+     *   stream: "配信タイトル",
+     *   timestamp: "01:23:45",
+     *   url: "https://www.youtube.com/watch?v=..."
+     * }
      */
 
     const performances = [];
@@ -626,7 +730,7 @@
             START：${performance.timestamp}
           </p>
 
-          <a href="${performance.url}" target="_blank">
+          <a href="${performance.url}" target="_blank" rel="noopener noreferrer">
             ▶ YouTubeで見る
           </a>
 
