@@ -376,6 +376,153 @@
       border-bottom: 1px solid var(--teal);
     }
 
+    .archive-page-link {
+      display: inline-block;
+      margin-top: 26px;
+      color: var(--teal);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--teal);
+    }
+
+    .subpage-section {
+      border-top: 1px solid var(--line);
+    }
+
+    .soft-section {
+      background: var(--light);
+      max-width: none;
+    }
+
+    .empty-list {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 35px 20px;
+      border: 1px solid var(--line);
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .calendar-intro {
+      text-align: center;
+      color: #777;
+      font-family: "Noto Serif JP", serif;
+      font-size: 13px;
+      margin: -20px auto 30px;
+      max-width: 700px;
+    }
+
+    .calendar-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .calendar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--line);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      color: var(--teal);
+    }
+
+    .calendar-nav {
+      border: none;
+      background: transparent;
+      color: var(--teal);
+      font-size: 25px;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+
+    .calendar-week, .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .calendar-week span {
+      padding: 10px 3px;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .calendar-day {
+      min-height: 72px;
+      padding: 8px;
+      border-top: 1px solid #eee;
+      border-right: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    .calendar-day:hover {
+      background: rgba(126, 186, 184, 0.08);
+    }
+
+    .calendar-day.muted {
+      color: #ccc;
+      cursor: default;
+    }
+
+    .calendar-day .date {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+    }
+
+    .calendar-day .event-dot {
+      display: block;
+      width: 5px;
+      height: 5px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .calendar-detail {
+      max-width: 800px;
+      margin: 18px auto 0;
+      padding: 18px 20px;
+      border-left: 2px solid var(--teal);
+      background: var(--light);
+      color: #666;
+      font-size: 13px;
+      min-height: 55px;
+    }
+
+    .archive-box {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .archive-link {
+      display: block;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .archive-link:hover {
+      background: #fdfcf6;
+      transform: translateY(-3px);
+    }
+
+    .archive-item p {
+      color: #888;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    .archive-item span {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--teal);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 12px;
+    }
+
     /* ---------- ARCHIVE ---------- */
 
     .archive {
@@ -390,7 +537,7 @@
 
     .archive-box {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1px;
       background: var(--line);
       border: 1px solid var(--line);
@@ -441,7 +588,8 @@
     @media (max-width: 700px) {
 
       .header-inner {
-        padding: 14px 16px;
+        padding: 14px 8px 14px 4px;
+        gap: 18px;
       }
 
       .logo {
@@ -471,7 +619,12 @@
       }
 
       .archive-box {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .calendar-day {
+        min-height: 58px;
+        padding: 5px;
       }
 
       .profile-text {
@@ -577,7 +730,6 @@
 
     <!-- PERFORMANCE COLLECTION -->
     <section id="performance">
-
       <div class="section-heading">
         <small>PERFORMANCE COLLECTION</small>
         <h2>演奏コレクション</h2>
@@ -585,29 +737,78 @@
       </div>
 
       <p class="performance-intro">
-        神永タイガさんが今まで楽器演奏を行ったものをランダムで表示、再生します。
+        神永タイガさんが今まで楽器演奏を行ったものをまとめています。
       </p>
 
       <div class="random-area">
-
-        <button class="random-button" onclick="randomPlay()">
-          🎲 RANDOM PLAY
-        </button>
-
-        <div id="random-result">
-          <!-- ランダム結果がここに表示されます -->
-        </div>
-
+        <button class="random-button" onclick="randomPlay()">RANDOM PLAY</button>
+        <div id="random-result"></div>
+        <a class="archive-page-link" href="#performance-list">一覧はこちら →</a>
       </div>
-
     </section>
 
+    <section id="performance-list" class="subpage-section">
+      <div class="section-heading">
+        <small>PERFORMANCE LIST</small>
+        <h2>演奏一覧</h2>
+        <div class="ornament">— ♫ —</div>
+      </div>
+      <div class="empty-list">演奏データを追加すると、ここに一覧が表示されます。</div>
+    </section>
+
+    <section id="history" class="subpage-section soft-section">
+      <div class="section-heading">
+        <small>HISTORY</small>
+        <h2>活動の軌跡</h2>
+        <div class="ornament">— ♫ —</div>
+      </div>
+      <div class="timeline empty-list">
+        活動記録を追加すると、ここに時系列で表示されます。
+      </div>
+    </section>
+
+    <section id="calendar" class="subpage-section">
+      <div class="section-heading">
+        <small>ACTIVITY CALENDAR</small>
+        <h2>活動カレンダー</h2>
+        <div class="ornament">— ♫ —</div>
+      </div>
+      <p class="calendar-intro">
+        配信・動画投稿などの活動を日付ごとにまとめています。日付をタップすると詳細を表示できます。
+      </p>
+      <div class="calendar-wrap">
+        <div class="calendar-head">
+          <button class="calendar-nav" onclick="changeMonth(-1)">‹</button>
+          <div id="calendar-title"></div>
+          <button class="calendar-nav" onclick="changeMonth(1)">›</button>
+        </div>
+        <div class="calendar-week">
+          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+      </div>
+      <div id="calendar-detail" class="calendar-detail">
+        日付をタップすると詳細が表示されます。
+      </div>
+    </section>
+
+    <section id="songs" class="subpage-section soft-section">
+      <div class="section-heading">
+        <small>SONGS</small>
+        <h2>Songs</h2>
+        <div class="ornament">— ♪ —</div>
+      </div>
+      <p class="performance-intro">
+        歌ってみた・オリジナル曲・歌枠など、歌唱に関する記録をまとめています。
+      </p>
+      <div class="empty-list">
+        歌唱データを追加すると、ここに一覧が表示されます。
+      </div>
+    </section>
 
     <!-- ARCHIVE -->
     <section id="archive" class="archive">
-
       <div class="archive-inner">
-
         <div class="section-heading">
           <small>ARCHIVE</small>
           <h2>ARCHIVE</h2>
@@ -615,26 +816,35 @@
         </div>
 
         <div class="archive-box">
-
-          <div class="archive-item">
+          <a class="archive-item archive-link" href="#history">
             <div class="number">01</div>
             <h3>HISTORY</h3>
-          </div>
+            <p>活動の軌跡を辿る</p>
+            <span>VIEW →</span>
+          </a>
 
-          <div class="archive-item">
+          <a class="archive-item archive-link" href="#performance-list">
             <div class="number">02</div>
             <h3>PERFORMANCE</h3>
-          </div>
+            <p>演奏コレクション一覧</p>
+            <span>VIEW →</span>
+          </a>
 
-          <div class="archive-item">
+          <a class="archive-item archive-link" href="#calendar">
             <div class="number">03</div>
-            <h3>MUSIC</h3>
-          </div>
+            <h3>CALENDAR</h3>
+            <p>活動をカレンダーで見る</p>
+            <span>VIEW →</span>
+          </a>
 
+          <a class="archive-item archive-link" href="#songs">
+            <div class="number">04</div>
+            <h3>SONGS</h3>
+            <p>歌唱・楽曲の記録</p>
+            <span>VIEW →</span>
+          </a>
         </div>
-
       </div>
-
     </section>
 
   </main>
@@ -676,6 +886,55 @@
 
     const performances = [];
 
+
+    const activityEvents = [
+      // { date: "2026-08-28", type: "FIRST STREAM", title: "バイオリンの日", detail: "初配信" }
+    ];
+
+    let calendarDate = new Date(2026, 8, 1);
+
+    function changeMonth(amount) {
+      calendarDate.setMonth(calendarDate.getMonth() + amount);
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const year = calendarDate.getFullYear();
+      const month = calendarDate.getMonth();
+      document.getElementById("calendar-title").textContent =
+        `${year}.${String(month + 1).padStart(2, "0")}`;
+
+      const grid = document.getElementById("calendar-grid");
+      grid.innerHTML = "";
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const lastDate = new Date(year, month + 1, 0).getDate();
+
+      for (let i = 0; i < firstDay; i++) {
+        const cell = document.createElement("div");
+        cell.className = "calendar-day muted";
+        grid.appendChild(cell);
+      }
+
+      for (let day = 1; day <= lastDate; day++) {
+        const cell = document.createElement("div");
+        cell.className = "calendar-day";
+        const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        const events = activityEvents.filter(e => e.date === key);
+
+        cell.innerHTML = `<span class="date">${day}</span>${events.length ? '<span class="event-dot"></span>' : ''}`;
+
+        if (events.length) {
+          cell.onclick = () => {
+            document.getElementById("calendar-detail").innerHTML =
+              events.map(e => `<strong>${e.date}</strong><br>${e.type} — ${e.title}<br>${e.detail || ""}`).join("<hr style='border:0;border-top:1px solid #ddd;margin:10px 0;'>");
+          };
+        }
+        grid.appendChild(cell);
+      }
+    }
+
+    renderCalendar();
 
     /*
      * RANDOM PLAY
